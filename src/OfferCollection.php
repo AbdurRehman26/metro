@@ -5,6 +5,7 @@ namespace App;
 use Contracts\OfferCollectionInterface;
 use Contracts\OfferInterface;
 use Iterator;
+use Models\Offer;
 
 class OfferCollection implements OfferCollectionInterface
 {
@@ -17,6 +18,8 @@ class OfferCollection implements OfferCollectionInterface
 
     public function get(int $index): OfferInterface
     {
-        return $this->collection[0];
+        $key = array_search('123', array_column($this->collection, 'offerId'));
+
+        return $this->collection[$key];
     }
 }

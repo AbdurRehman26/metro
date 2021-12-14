@@ -17,7 +17,12 @@ class main{
 
     public function count_by_price_range(int $from, int $to): int
     {
-        echo json_decode($this->collection, true)[0]['offerId'];
+        var_dump($this->collection->get(0));
+        exit(1);
+        foreach ($collectionToArray as $value){
+            exit(1);
+        }
+
         return $from + $to;
     }
 
